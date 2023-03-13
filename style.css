@@ -1,13 +1,13 @@
 body {
-    color: #FFEDDF;
-    background-color: #100007;
+    color: #CFBCDF;
+    background-color: #040F0F;
     font-family: 'Consolas', serif;
 }
 
 a {
-    color: #6EA4BF
+    color: #4E8098
 }
 
 a:visited {
-    color: #C76D7E
+    color: #B74F6F
 }
