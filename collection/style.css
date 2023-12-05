@@ -32,8 +32,19 @@ img {
     padding: 5px;
 }
 
+.moveable1 {
+    position: absolute;
+    z-index: 10;
+    background-color:darkslategray;
+    text-align: center;
+    cursor: move;
+    border: 1px solid #FBFBFB;
+    padding: 5px;
+}
+
 .flexContainer {
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    margin-bottom: 45px;
 }
