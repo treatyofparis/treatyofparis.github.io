@@ -31,3 +31,9 @@ img {
     border: 1px solid #FBFBFB;
     padding: 5px;
 }
+
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
