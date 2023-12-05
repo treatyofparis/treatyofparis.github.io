@@ -1,43 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>home</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-
-<body>
-    <h1>test</h1>
-  
-<div class="flexContainer">
-  <div class="moveable">words</div>
-  <div class="moveable">words</div>
-  <div class="moveable">words</div>
-  <div class="moveable">wordss</div>
-  <div class="moveable">wordsss</div>
-  <div class="moveable">wordssss</div>
-  <div class="moveable">wordsssss</div>
-  <div class="moveable">wordssssss</div>
-  <div class="moveable">wordsssssss</div>
-  <div class="moveable">wordssssssss</div>
-  <div class="moveable">wordsssssssss</div>
-  <div class="moveable">wordssssssssss</div>
-  <div class="moveable">wordssssssssssssss</div>
-</div>
-
-<div class="flexContainer">
-  <div class="moveable1">newline?</div>
-</div>
-
-<a href="">
-  <button type="button">i'm ready to move on</button>
-</a>
-<a href="./home.html">
-  <button type="button">go back home</button>
-</a>
-
-<script>
 var offset = 0;
 var moveable = document.getElementsByClassName("moveable");
 for (var i = 0; i < moveable.length; i++) {
@@ -51,7 +11,15 @@ var moveable1 = document.getElementsByClassName("moveable1");
 for (var i = 0; i < moveable1.length; i++) {
     dragElement(moveable1[i]);
     moveable1[i].style.left = offset1 + "px";
-    offset1 = offset1 + moveable1[i].offset1Width + moveable1.length + i;
+    offset1 = offset1 + moveable1[i].offsetWidth + moveable1.length + i;
+}
+
+var offset2 = 0;
+var moveable2 = document.getElementsByClassName("moveable2");
+for (var i = 0; i < moveable2.length; i++) {
+    dragElement(moveable2[i]);
+    moveable2[i].style.left = offset2 + "px";
+    offset2 = offset2 + moveable2[i].offsetWidth + moveable2.length + i;
 }
 
 function dragElement(elmnt) {
@@ -83,6 +51,3 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
-</script>
-</body> 
-</html>
