@@ -3,7 +3,7 @@ var moveable = document.getElementsByClassName("moveable");
 for (var i = 0; i < moveable.length; i++) {
     dragElement(moveable[i]);
     moveable[i].style.left = offset + "px";
-    offset = offset + moveable[i].offsetWidth + moveable.length + 7;
+    offset = offset + moveable[i].offsetWidth + moveable.length + 5;
 }
 
 var offset1 = 0;
@@ -11,7 +11,7 @@ var moveable1 = document.getElementsByClassName("moveable1");
 for (var i = 0; i < moveable1.length; i++) {
     dragElement(moveable1[i]);
     moveable1[i].style.left = offset1 + "px";
-    offset1 = offset1 + moveable1[i].offsetWidth + moveable1.length + 7;
+    offset1 = offset1 + moveable1[i].offsetWidth + moveable1.length + 5;
 }
 
 var offset2 = 0;
@@ -19,7 +19,7 @@ var moveable2 = document.getElementsByClassName("moveable2");
 for (var i = 0; i < moveable2.length; i++) {
     dragElement(moveable2[i]);
     moveable2[i].style.left = offset2 + "px";
-    offset2 = offset2 + moveable2[i].offsetWidth + moveable2.length + 7;
+    offset2 = offset2 + moveable2[i].offsetWidth + moveable2.length + 5;
 }
 
 function dragElement(elmnt) {
