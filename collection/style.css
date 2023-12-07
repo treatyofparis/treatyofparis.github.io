@@ -64,3 +64,24 @@ button {
     font-family: IntelOneMono, 'Consolas', serif;
     cursor: pointer;
 }
+
+details {
+    padding-left: 20px;
+    display: block;
+    line-height: 1.5em;
+    font-size: 24px;
+}
+
+details summary {
+    cursor: pointer;
+}
+
+@keyframes details-show {
+    from {
+      opacity:0;
+    }
+  }
+
+details[open] > *:not(summary) {
+    animation: details-show 500ms;
+  }
