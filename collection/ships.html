@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<!--
+The House of Dust reimplementation
+copyright (c) 2014 Nick Montfort <nickm@nickm.com>
+based on a 1967 program by Alison Knowles and James Tenney
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
+IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Updated 10 March 2015 to remove a duplicate value in "place".
+Updated 17 November 2015 to remove a near-duplicate value in "inhabitants".
+Updated 18 November 2015 to add "IN A DESERT" & "ON OPEN GROUND" to "place".
+Updated 28 August 2019 to add a link to an image of the chapbook.
+-->
+<link rel="stylesheet" href="style.css">
+<style type="text/css">
+    body {
+        font-size:14pt;
+    }
+</style>
+<script type="text/javascript">
+
+var t = 0,
+denizens = ['BLUEPRINTS', 'BUSINESSMEN', 'ISLANDS', 'GREEN THINGS', 'PANDAS', 'ENEMIES', 'PEOPLE WHO DO NOT DREAM', 'THOSE WHO CANNOT LOVE', 'UNREMEMBERING FOLKS', 'OLD IDEAS', 'VISITORS', 'CURATORS', 'PEOPLE WHO DO NOT UNDERSTAND EACH OTHER', 'HURRICANES', 'PHILOSOPHERS', 'PEOPLE WHO BELIEVE IN INFINITE GODS', 'FRIENDS WHO BECAME STRANGERS', 'SURVIVORS'],
+homeland = ['ACROSS THE SEA', 'HEAVEN', 'UNMAPPABLE LANDS', 'ATLASES AND ENCYCLOPEDIAS', 'THE PAST', 'NOWHERE', 'THE COLD', 'THE FOG ABOVE MOUNTAINS', 'THE MOON', 'A SUNKEN TEMPLE', 'RAZED LANDS', 'THE TOWER OF BABEL', 'SHANGDU', 'THE PARIS METRO', 'A CAVE', 'THE WASTELAND', 'WOODBLOCK PRINTS', 'A NATION OF HILLS', 'A WARM PLACE', 'A COUNTRY OF DUST'],
+power_source = ['COAL', 'COCONUT OIL', 'THE SUN', 'THE DEAD', 'UNBURIED BONES', 'WATER', 'THEIR CHILDREN', 'FOOL&apos;S GOLD', 'MYTHS', 'STOLEN OIL', 'GHOSTS WHO ARE NOT PEACEFUL', 'THE OTHERS', 'BLUE EYES', 'WIND', 'BAD POETRY', 'CALLIGRAPHY', 'DYING LANGUAGES', 'ETERNAL FLAMES', 'TEARS', 'BATTERIES'],
+destination = ['HOME', 'OUT OF SIGHT', 'TO A WORSE PLACE', 'BACK TO WHERE THEY CAME', 'TO A CITY WHICH DOES NOT LOVE THEM', 'TO THE CLOUDS', 'FAR AWAY FROM US', 'TO A SECRET PLACE', 'TO AMERICA', 'TO JOIN MANY OTHER SIMILAR SHIPS', 'TO FORGET WHO THEY ARE', 'TO THE COUNTRYSIDE', 'NOWHERE IN PARTICULAR', 'TO THE PURE LAND', 'TO KUNLUN', 'TO VISIT FRIENDS', 'TO VENICE'];
+
+function rand_range(maximum) {
+    "use strict";
+    return Math.floor(Math.random() * (maximum + 1));
+}
+function choose(array) {
+    "use strict";
+    return array[rand_range(array.length - 1)];
+}
+function stanza() {
+    "use strict";
+    return 'A SHIP OF ' + choose(denizens) + '<br \>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FROM ' + choose(homeland) + '<br \>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;POWERED BY ' + choose(power_source) + '<br \>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GOING ' + choose(destination);
+}
+function litany() {
+    "use strict";
+    var last, text, main = document.getElementById('main');
+    if (8 > t) {
+        t += 1;
+    } else {
+        main.removeChild(document.getElementById('main').firstChild);
+    }
+    last = document.createElement('div');
+    last.innerHTML = stanza();
+    main.appendChild(last);
+}
+function produce_litany() {
+    "use strict";
+    litany();
+    setInterval(litany, 4500);
+}
+
+</script>
+  <title>ships</title>
+</head>
+
+<body onload="produce_litany();">
+    <h1>ships</h1>
+    <button type="button" onclick="window.location='home.html'">return</button>
+    <br>
+<div id="main"></div>
+</body>
+</html>
